@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "487316996428",
+    "project_id": "flutter-insta-blocs",
+    "storage_bucket": "flutter-insta-blocs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487316996428:android:5a4f2c8805a9e94b2bcfe9",
+        "android_client_info": {
+          "package_name": "com.launchflutter.instabloc.flutterlaunch_instabloc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487316996428-ffmjk411d74481s6qs8c3nlf9mod6g9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUiyGi_pfArrHyQrppNMIPJ4ZLIoY4b14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487316996428-ffmjk411d74481s6qs8c3nlf9mod6g9n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487316996428-l9ogdblm9vrqcf864m8vm45r7t0amjga.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.launchflutter.instabloc.flutterlaunchInstabloc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
