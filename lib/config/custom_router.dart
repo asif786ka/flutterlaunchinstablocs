@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../screens/login/login_screen.dart';
+import '../screens/nav/nav_screen.dart';
 import '../screens/splash/splash_screen.dart';
 
 class CustomRouter {
@@ -15,6 +17,10 @@ class CustomRouter {
         );
       case SplashScreen.routeName:
         return SplashScreen.route();
+      case LoginScreen.routeName:
+        return LoginScreen.route();
+      case NavScreen.routeName:
+        return NavScreen.route();
       default:
         return _errorRoute();
     }

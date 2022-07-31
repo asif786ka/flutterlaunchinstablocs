@@ -18,12 +18,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   })  : _authRepository = authRepository,
         super(AuthState.unknown()) {
     _userSubscription =
-        _authRepository.user.listen((user) => add(AuthUserChanged(user: user!)));
+        _authRepository.user.listen((user) => add(AuthUserChanged(user: user)));
   }
 
   @override
   Future<void> close() {
-    _userSubscription?.cancel();
+    _userSubscription.cancel();
     return super.close();
   }
 
