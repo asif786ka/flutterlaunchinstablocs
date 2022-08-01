@@ -21,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void logInWithCredentials() async {
-    if (state.isFormValid || state.status == LoginStatus.submitting) return;
+    if (!state.isFormValid || state.status == LoginStatus.submitting) return;
     emit(state.copyWith(status: LoginStatus.submitting));
     try {
       await _authRepository.logInWithEmailAndPassword(
