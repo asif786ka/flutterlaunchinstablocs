@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../../models/failure_model.dart';
-import '../../repositories/auth/auth_repository.dart';
+import '../../../models/failure_model.dart';
+import '../../../repositories/auth/auth_repository.dart';
 
 part 'login_state.dart';
 

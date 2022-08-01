@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../repositories/auth/auth_repository.dart';
-import 'login_cubit.dart';
+import 'cubit/login_cubit.dart';
 
 class LoginScreen extends StatelessWidget {
   static const String routeName = '/login';
+
+  LoginScreen({Key? key}) : super(key: key);
 
   static Route route() {
     return PageRouteBuilder(
