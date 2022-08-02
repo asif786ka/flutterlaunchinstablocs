@@ -74,12 +74,12 @@ class SignupScreen extends StatelessWidget {
                                   .read<SignupCubit>()
                                   .usernameChanged(value),
                               validator: (value) => value!.trim().isEmpty
-                                  ? 'Please enter a valid email.'
+                                  ? 'Please enter a valid username.'
                                   : null,
                             ),
                             const SizedBox(height: 16.0),
                             TextFormField(
-                              decoration: InputDecoration(hintText: 'Email'),
+                              decoration: const InputDecoration(hintText: 'Email'),
                               onChanged: (value) => context
                                   .read<SignupCubit>()
                                   .emailChanged(value),

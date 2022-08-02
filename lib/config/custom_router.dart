@@ -1,11 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutterlaunch_instabloc/screens/screens.dart';
 
-import '../screens/login/login_screen.dart';
-import '../screens/nav/nav_screen.dart';
-import '../screens/splash/splash_screen.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -20,10 +15,18 @@ class CustomRouter {
         return SplashScreen.route();
       case LoginScreen.routeName:
         return LoginScreen.route();
-      case NavScreen.routeName:
-        return NavScreen.route();
       case SignupScreen.routeName:
         return SignupScreen.route();
+      case NavScreen.routeName:
+        return NavScreen.route();
+      default:
+        return _errorRoute();
+    }
+  }
+
+  static Route onGenerateNestedRoute(RouteSettings settings) {
+    print('Nested Route: ${settings.name}');
+    switch (settings.name) {
       default:
         return _errorRoute();
     }
