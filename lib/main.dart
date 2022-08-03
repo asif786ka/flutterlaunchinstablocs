@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutterlaunch_instabloc/repositories/auth/auth_repository.dart';
+import 'package:flutterlaunch_instabloc/repositories/user/user_repository.dart';
 import 'package:flutterlaunch_instabloc/screens/splash/splash_screen.dart';
 
 import 'blocs/auth/auth_bloc.dart';
@@ -24,7 +25,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
-      providers: [RepositoryProvider<AuthRepository>(create: (_) => AuthRepository())],
+      providers: [RepositoryProvider<AuthRepository>(create: (_) => AuthRepository()), RepositoryProvider<UserRepository>(
+        create: (_) => UserRepository(),
+      ),],
       child: MultiBlocProvider(
         providers: [ BlocProvider<AuthBloc>(create: (context) => AuthBloc(authRepository: context.read<AuthRepository>()))],
         child: MaterialApp(
