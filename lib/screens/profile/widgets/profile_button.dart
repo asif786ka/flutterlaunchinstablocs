@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../edit_profile/edit_profile_screen.dart';
+
 class ProfileButton extends StatelessWidget {
   final bool isCurrentUser;
   final bool isFollowing;
@@ -16,7 +18,10 @@ class ProfileButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return isCurrentUser
         ? FlatButton(
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).pushNamed(
+        EditProfileScreen.routeName,
+        arguments: EditProfileScreenArgs(context: context),
+      ),
       color: Theme.of(context).primaryColor,
       textColor: Colors.white,
       child: const Text(
@@ -31,7 +36,7 @@ class ProfileButton extends StatelessWidget {
       textColor: isFollowing ? Colors.black : Colors.white,
       child: Text(
         isFollowing ? 'Unfollow' : 'Follow',
-        style: TextStyle(fontSize: 16.0),
+        style: const TextStyle(fontSize: 16.0),
       ),
     );
   }
