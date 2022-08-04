@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_cropper/image_cropper.dart';
 
+import '../../helpers/image_helper.dart';
 import '../../models/user_model.dart';
 import '../../repositories/storage/storage_repository.dart';
 import '../../repositories/user/user_repository.dart';
@@ -129,8 +133,17 @@ class EditProfileScreen extends StatelessWidget {
     );
   }
 
-  void _selectProfileImage(BuildContext context) {
-    // TODO: implement
+  void _selectProfileImage(BuildContext context) async {
+    final pickedFile = await ImageHelper.pickImageFromGallery(
+      context: context,
+      cropStyle: CropStyle.circle,
+      title: 'Profile Image',
+    );
+    if (pickedFile != null) {
+      context
+          .read<EditProfileCubit>()
+          .profileImageChanged(File(pickedFile.path));
+    }
   }
 
   void _submitForm(BuildContext context, bool isSubmitting) {
