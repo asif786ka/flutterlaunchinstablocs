@@ -29,7 +29,6 @@ class EditProfileState extends Equatable {
 
   @override
   List<Object> get props => [
-    profileImage!,
     username,
     bio,
     status,

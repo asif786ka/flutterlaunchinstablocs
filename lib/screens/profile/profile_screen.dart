@@ -11,7 +11,7 @@ import 'bloc/profile_bloc.dart';
 class ProfileScreen extends StatelessWidget {
   static const String routeName = '/profile';
 
-  ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
