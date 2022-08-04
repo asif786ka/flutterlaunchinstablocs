@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutterlaunch_instabloc/repositories/auth/auth_repository.dart';
+import 'package:flutterlaunch_instabloc/repositories/storage/storage_repository.dart';
 import 'package:flutterlaunch_instabloc/repositories/user/user_repository.dart';
 import 'package:flutterlaunch_instabloc/screens/splash/splash_screen.dart';
 
@@ -27,6 +28,8 @@ class MyApp extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [RepositoryProvider<AuthRepository>(create: (_) => AuthRepository()), RepositoryProvider<UserRepository>(
         create: (_) => UserRepository(),
+      ),RepositoryProvider<StorageRepository>(
+        create: (_) => StorageRepository(),
       ),],
       child: MultiBlocProvider(
         providers: [ BlocProvider<AuthBloc>(create: (context) => AuthBloc(authRepository: context.read<AuthRepository>()))],
