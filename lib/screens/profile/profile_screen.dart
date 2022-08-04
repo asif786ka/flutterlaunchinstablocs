@@ -27,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(state.user.username),
+            title: Center(child: Text(state.user.username, style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
             actions: [
               if (state.isCurrentUser)
                 IconButton(
